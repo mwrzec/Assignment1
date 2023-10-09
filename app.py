@@ -52,4 +52,4 @@ def determine_otcm(roll_val, attr_val):
         return "Critical Win"
 
 if __name__ == "__main__":
-    pass  # You can add code here for any standalone functionality in app.py
+    pass  
