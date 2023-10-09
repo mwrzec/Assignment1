@@ -4,20 +4,20 @@ class Fighter2:
     """
     Create character Mage. Name,Health, Attack, Defense, etc.
     """
-    def __init__(self, name, health, attack, defense, attribute_value=0):
+    def __init__(self, name, hlth, attack, defense, attr_val=0):
         self.name = name
-        self.health = health
+        self.hlth = hlth
         self.attack = attack
         self.defense = defense
-        self.attribute_value = attribute_value
+        self.attr_val = attr_val
     """
     If character is still alive/ >0 return character health.
     """
     def still_alive(self):
-        return self.health > 0
+        return self.hlth > 0
     """
     If character takes damage show health after defence/after being hit.
     """
-    def take_damage(self, damage):
-        damage_after_defense = max(0, damage - self.defense)
-        self.health -= damage_after_defense
+    def take_dmg(self, dmg):
+        dmg_after_defense = max(0, dmg - self.defense)
+        self.hlth -= dmg_after_defense

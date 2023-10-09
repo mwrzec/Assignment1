@@ -23,12 +23,12 @@ def select_character():
     select = input("\nEnter your choice: ")
 
     if select == "1" or select.lower() == "spartan":
-        player = Fighter1(name="Spartan", health=100, attack=15, defense=5)
-        enemy = Fighter2(name="Enemy", health=100, attack=6, defense=0, attribute_value=random.randint(1, 10))
+        player = Fighter1(name="Spartan", hlth=100, attack=15, defense=5)
+        enemy = Fighter2(name="Enemy", hlth=100, attack=6, defense=0, attr_val=random.randint(1, 10))
 
     elif select == "2" or select.lower() == "mage":
-        player = Fighter2(name="Mage", health=70, attack=50, defense=2)
-        enemy = Fighter1(name="Enemy", health=100, attack=15, defense=5, attribute_value=random.randint(1, 10))
+        player = Fighter2(name="Mage", hlth=70, attack=50, defense=2)
+        enemy = Fighter1(name="Enemy", hlth=100, attack=15, defense=5, attr_val=random.randint(1, 10))
 
     else:
         print(RED + "Invalid Character Chosen. Try again." + RESET)
@@ -41,14 +41,14 @@ Roll random 2 sided dice for attack, defence etc.
 def roll_dice(num_dice, dice_range):
     return sum(random.randint(dice_range[0], dice_range[1]) for _ in range(num_dice))
 
-def determine_outcome(roll_value, attribute_value):
-    if 2 <= roll_value <= 3:
+def determine_otcm(roll_val, attr_val):
+    if 2 <= roll_val <= 3:
         return "Critical Loss"
-    elif 4 <= roll_value <= 7:
+    elif 4 <= roll_val <= 7:
         return "Loss"
-    elif 8 <= roll_value <= 10:
+    elif 8 <= roll_val <= 10:
         return "Win"
-    elif 11 <= roll_value <= 12:
+    elif 11 <= roll_val <= 12:
         return "Critical Win"
 
 if __name__ == "__main__":
